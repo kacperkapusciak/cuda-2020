@@ -1,0 +1,9 @@
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
+.metadata/
+querry/
+RemoteSystemsTempFiles/
+
