@@ -45,6 +45,9 @@ src/vectorAdd.o : ../src/vectorAdd.cu \
     /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
     /usr/include/c++/4.8.2/exception \
     /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
+    /usr/include/c++/4.8.2/bits/exception_ptr.h \
+    /usr/include/c++/4.8.2/bits/exception_defines.h \
+    /usr/include/c++/4.8.2/bits/nested_exception.h \
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \
@@ -112,31 +115,30 @@ src/vectorAdd.o : ../src/vectorAdd.cu \
     /usr/local/cuda-10.1/bin/../targets/x86_64-linux/include/texture_indirect_functions.h \
     /usr/local/cuda-10.1/bin/../targets/x86_64-linux/include/surface_indirect_functions.h \
     /usr/local/cuda-10.1/bin/../targets/x86_64-linux/include/device_launch_parameters.h \
-    /usr/local/cuda-10.1/samples/common/inc/helper_cuda.h \
-    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
-    /usr/include/stdint.h \
-    /usr/include/bits/wchar.h \
-    /usr/local/cuda-10.1/samples/common/inc/helper_string.h \
-    /usr/include/c++/4.8.2/fstream \
-    /usr/include/c++/4.8.2/istream \
+    /usr/include/c++/4.8.2/iostream \
+    /usr/include/c++/4.8.2/ostream \
     /usr/include/c++/4.8.2/ios \
     /usr/include/c++/4.8.2/iosfwd \
     /usr/include/c++/4.8.2/bits/stringfwd.h \
     /usr/include/c++/4.8.2/bits/memoryfwd.h \
     /usr/include/c++/4.8.2/bits/postypes.h \
     /usr/include/c++/4.8.2/cwchar \
+    /usr/include/bits/wchar.h \
     /usr/include/c++/4.8.2/bits/char_traits.h \
     /usr/include/c++/4.8.2/bits/stl_algobase.h \
     /usr/include/c++/4.8.2/bits/functexcept.h \
-    /usr/include/c++/4.8.2/bits/exception_defines.h \
     /usr/include/c++/4.8.2/ext/numeric_traits.h \
     /usr/include/c++/4.8.2/bits/stl_pair.h \
     /usr/include/c++/4.8.2/bits/move.h \
     /usr/include/c++/4.8.2/bits/concept_check.h \
+    /usr/include/c++/4.8.2/type_traits \
     /usr/include/c++/4.8.2/bits/stl_iterator_base_types.h \
     /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
     /usr/include/c++/4.8.2/debug/debug.h \
     /usr/include/c++/4.8.2/bits/stl_iterator.h \
+    /usr/include/c++/4.8.2/cstdint \
+    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+    /usr/include/stdint.h \
     /usr/include/c++/4.8.2/bits/localefwd.h \
     /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
     /usr/include/c++/4.8.2/clocale \
@@ -164,6 +166,18 @@ src/vectorAdd.o : ../src/vectorAdd.cu \
     /usr/include/c++/4.8.2/backward/binders.h \
     /usr/include/c++/4.8.2/bits/range_access.h \
     /usr/include/c++/4.8.2/bits/basic_string.h \
+    /usr/include/c++/4.8.2/initializer_list \
+    /usr/include/c++/4.8.2/ext/string_conversions.h \
+    /usr/include/c++/4.8.2/cstdio \
+    /usr/include/c++/4.8.2/cerrno \
+    /usr/include/errno.h \
+    /usr/include/bits/errno.h \
+    /usr/include/linux/errno.h \
+    /usr/include/asm/errno.h \
+    /usr/include/asm-generic/errno.h \
+    /usr/include/asm-generic/errno-base.h \
+    /usr/include/c++/4.8.2/bits/functional_hash.h \
+    /usr/include/c++/4.8.2/bits/hash_bytes.h \
     /usr/include/c++/4.8.2/bits/basic_string.tcc \
     /usr/include/c++/4.8.2/bits/locale_classes.tcc \
     /usr/include/c++/4.8.2/streambuf \
@@ -177,12 +191,18 @@ src/vectorAdd.o : ../src/vectorAdd.cu \
     /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h \
     /usr/include/c++/4.8.2/bits/locale_facets.tcc \
     /usr/include/c++/4.8.2/bits/basic_ios.tcc \
-    /usr/include/c++/4.8.2/ostream \
     /usr/include/c++/4.8.2/bits/ostream.tcc \
+    /usr/include/c++/4.8.2/istream \
     /usr/include/c++/4.8.2/bits/istream.tcc \
+    /usr/include/c++/4.8.2/chrono \
+    /usr/include/c++/4.8.2/ratio \
+    /usr/include/c++/4.8.2/limits \
+    /usr/include/c++/4.8.2/ctime \
+    /usr/include/c++/4.8.2/fstream \
     /usr/include/c++/4.8.2/bits/codecvt.h \
-    /usr/include/c++/4.8.2/cstdio \
     /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
     /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
     /usr/include/c++/4.8.2/bits/fstream.tcc \
+    /usr/local/cuda-10.1/samples/common/inc/helper_cuda.h \
+    /usr/local/cuda-10.1/samples/common/inc/helper_string.h \
     /usr/include/strings.h
