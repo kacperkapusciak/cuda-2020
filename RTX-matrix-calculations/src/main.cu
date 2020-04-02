@@ -152,7 +152,7 @@ void printMatrix(T* A, unsigned long N, unsigned long M) {
 int main(int argc, char **argv) {
 	cudaError_t err = cudaSuccess;
 	FILE *fdevice;
-	fdevice = fopen(".txt", "w");
+	fdevice = fopen("hadamardDevice2D.txt", "w");
 
 	for (int i = 10; i <= 10000; i *= 10) {
 		for (int j = 0; j < 10; j++) {
@@ -193,10 +193,13 @@ int main(int argc, char **argv) {
 			copyMemoryFromHostToDevice(d_B, h_B, matrixSizeInt);
 
 			int threadsPerBlock = 256;
-			int blocksPerGrid =(numElements + threadsPerBlock - 1) / threadsPerBlock;
-			printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
 
-			hadamardDevice1D<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, numElements);
+			dim3 blockSize(threadsPerBlock, threadsPerBlock);
+			int blockX = (N + threadsPerBlock - 1) / threadsPerBlock;
+			int blockY = (M + threadsPerBlock - 1) / threadsPerBlock;
+			dim3 blocksPerGrid = dim3(blockX, blockY);
+
+			hadamardDevice2D<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N, M);
 
 			copyMemoryFromDeviceToHost(h_deviceResult, d_C, matrixSizeInt);
 
